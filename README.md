@@ -42,6 +42,53 @@ Para qualquer pessoa ou equipe que queira automatizar trabalho operacional e rep
 - **Tutoriais e manuais** — o agente navega na internet, bate prints e monta um documento completo passo a passo (ideal para manuais de SaaS)
 - E muito mais — qualquer fluxo de trabalho que envolva pesquisa, criação ou automação
 
+## 🎬 Pipeline de Vídeo
+
+O opensquad inclui 4 squads prontos para produção de vídeo completa — do roteiro à publicação.
+
+### Squads de Vídeo Disponíveis
+
+| Squad | Comando | O que faz |
+|-------|---------|-----------|
+| 🎬 Canal YouTube | `/opensquad run youtube-canal` | Roteiro + narração + cenas + SEO + thumbnail + publicação |
+| 📱 Fábrica TikTok | `/opensquad run tiktok-factory` | Hook + roteiro + narração + cenas + legendas + publicação |
+| 🎨 Fábrica de Reels | `/opensquad run reels-factory` | Hook + roteiro + narração + design estético + publicação |
+| ♻️ Repurposador de Shorts | `/opensquad run shorts-repurposer` | Baixa vídeo → transcreve → identifica highlights → corta clipes → publica |
+
+### Setup (obrigatório antes do primeiro uso)
+
+```bash
+bash setup/setup-local-ai.sh
+```
+
+O script instala todas as dependências necessárias de forma interativa.
+
+### Modelos de IA Locais e Gratuitos
+
+| Função | Modelo | RAM necessária | Qualidade |
+|--------|--------|----------------|-----------|
+| Narração TTS | Edge-TTS (Microsoft) | 0 MB (online) | ★★★★☆ |
+| Transcrição | Whisper base (faster-whisper) | ~500 MB | ★★★★☆ |
+| Geração de imagens | SDXL-turbo (diffusers) | ~3-4 GB | ★★★☆☆ |
+| Montagem de vídeo | FFmpeg + MoviePy | ~200 MB | ★★★★★ |
+| Legendas burn-in | FFmpeg (ASS filter) | ~50 MB | ★★★★★ |
+
+> **MacBook Air M1 com 8GB RAM:** Todos os modelos são compatíveis. Processar um vídeo por vez (não em paralelo). SDXL-turbo usa Metal (MPS) automaticamente.
+
+### Variáveis de Ambiente para Vídeo
+
+Adicione ao seu `.env` (ou copie de `.env.example`):
+
+```env
+LOCAL_TTS_MODEL=edge-tts
+LOCAL_TTS_VOICE=pt-BR-FranciscaNeural
+LOCAL_IMAGE_PROVIDER=diffusers
+LOCAL_IMAGE_MODEL=stabilityai/sdxl-turbo
+WHISPER_MODEL_SIZE=base
+```
+
+---
+
 ## Instalação
 
 **Pré-requisito:** Node.js 20+

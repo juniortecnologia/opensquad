@@ -114,3 +114,24 @@ catalog:
     name: "WhatsApp Broadcast"
     whenToUse: "Creating agents that produce WhatsApp broadcast messages or conversational marketing content."
     file: whatsapp-broadcast.md
+
+  # === Video Platform Best Practices ===
+  - id: tiktok-video
+    name: "TikTok Video"
+    whenToUse: "Creating agents that produce video content for TikTok — hooks, scripts, vertical format, captions, and audio strategy."
+    file: tiktok-video.md
+
+  - id: youtube-seo
+    name: "YouTube SEO"
+    whenToUse: "Creating agents that optimize YouTube videos for search — titles, descriptions, tags, chapters, and thumbnails."
+    file: youtube-seo.md
+
+  - id: video-production
+    name: "Video Production Pipeline"
+    whenToUse: "Creating agents that execute the full video production pipeline — scene images, TTS narration, FFmpeg assembly, and subtitles."
+    file: video-production.md
+
+  - id: storyboard
+    name: "Storyboard & Shot List"
+    whenToUse: "Creating agents that convert scripts into scene-by-scene storyboards with image prompts and timing for video production."
+    file: storyboard.md

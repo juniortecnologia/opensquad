@@ -1,0 +1,31 @@
+# Opensquad — Video Pipeline Python Dependencies
+# Instale com: pip install -r setup/requirements-video.txt
+#
+# Para M1/Apple Silicon, instale torch primeiro:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# (MPS é habilitado automaticamente no M1)
+
+# ── Montagem de vídeo ─────────────────────────────────────────────────────────
+moviepy>=1.0.3
+ffmpeg-python>=0.2.0
+
+# ── Download de vídeo ─────────────────────────────────────────────────────────
+yt-dlp>=2024.1.1
+
+# ── Transcrição / Legendas ────────────────────────────────────────────────────
+faster-whisper>=1.0.0
+
+# ── TTS / Narração ────────────────────────────────────────────────────────────
+edge-tts>=6.1.10
+
+# ── Geração de imagem local ───────────────────────────────────────────────────
+# Instale torch antes (veja instruções acima para M1)
+# torch>=2.0.0
+# torchvision>=0.15.0
+diffusers>=0.27.0
+transformers>=4.38.0
+accelerate>=0.27.0
+
+# ── Utilitários ───────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0
+requests>=2.31.0

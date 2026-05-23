@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>Instagram Reel Cover — 1080×1920</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #1A1A2E;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    /* Gradiente de fundo (sem imagem — estética Instagram) */
+    .bg-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        145deg,
+        #1A1A2E 0%,
+        #16213E 30%,
+        #0F3460 60%,
+        #533483 100%
+      );
+    }
+
+    /* Imagem de fundo opcional */
+    .bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+    }
+
+    /* Overlay para garantir legibilidade */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.3) 0%,
+        rgba(0,0,0,0.1) 40%,
+        rgba(0,0,0,0.8) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Elementos decorativos */
+    .decor-circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+      z-index: 1;
+    }
+    .decor-circle.big {
+      width: 900px;
+      height: 900px;
+      top: -200px;
+      right: -300px;
+      background: radial-gradient(circle, #E040FB, transparent);
+    }
+    .decor-circle.small {
+      width: 500px;
+      height: 500px;
+      bottom: 300px;
+      left: -150px;
+      background: radial-gradient(circle, #00B0FF, transparent);
+    }
+
+    /* Ícone do Instagram + conta no topo */
+    .top-bar {
+      position: absolute;
+      top: 80px;
+      left: 60px;
+      right: 60px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .instagram-tag {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 60px;
+      padding: 18px 40px;
+    }
+
+    .instagram-icon {
+      font-size: 36px;
+    }
+
+    .account-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    /* Badge de destaque */
+    .badge-top {
+      background: linear-gradient(135deg, #E040FB, #7B2FF7);
+      border-radius: 60px;
+      padding: 18px 48px;
+      font-size: 28px;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    /* Conteúdo central */
+    .content {
+      position: absolute;
+      z-index: 3;
+      bottom: 240px;
+      left: 60px;
+      right: 60px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #E040FB, #7B2FF7);
+      color: #FFFFFF;
+      font-size: 26px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      padding: 12px 36px;
+      border-radius: 50px;
+      margin-bottom: 40px;
+    }
+
+    .headline {
+      font-size: 108px;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.0;
+      text-shadow: 2px 4px 20px rgba(0,0,0,0.7);
+      margin-bottom: 36px;
+    }
+
+    .headline .accent {
+      background: linear-gradient(135deg, #E040FB, #7B2FF7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 40px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.80);
+    }
+
+    /* Linha decorativa */
+    .divider {
+      width: 120px;
+      height: 6px;
+      background: linear-gradient(90deg, #E040FB, #7B2FF7);
+      border-radius: 3px;
+      margin-bottom: 40px;
+    }
+
+    /* Footer */
+    .footer {
+      position: absolute;
+      bottom: 80px;
+      left: 60px;
+      right: 60px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .swipe-hint {
+      font-family: 'Inter', sans-serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .duration-badge {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 40px;
+      padding: 14px 36px;
+      font-size: 28px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fundo gradiente -->
+  <div class="bg-gradient"></div>
+
+  <!-- IMAGEM DE FUNDO opcional: descomente e substitua src -->
+  <!-- <img class="bg-image" src="background.jpg" alt=""> -->
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Elementos decorativos -->
+  <div class="decor-circle big"></div>
+  <div class="decor-circle small"></div>
+
+  <!-- Barra superior — PERSONALIZE @conta -->
+  <div class="top-bar">
+    <div class="instagram-tag">
+      <span class="instagram-icon">📱</span>
+      <span class="account-name">@seucanal</span>
+    </div>
+    <div class="badge-top">Reel</div>
+  </div>
+
+  <!-- Conteúdo principal — PERSONALIZE -->
+  <div class="content">
+    <div class="tag">✨ Dica do dia</div>
+    <div class="divider"></div>
+    <div class="headline">
+      3 hábitos<br>
+      que vão<br>
+      mudar sua<br>
+      <span class="accent">vida</span>
+    </div>
+    <div class="subtitle">Começa hoje mesmo</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="swipe-hint">
+      <span>▶</span>
+      <span>Assistir agora</span>
+    </div>
+    <div class="duration-badge">⏱ 30s</div>
+  </div>
+
+</body>
+</html>
